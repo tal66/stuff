@@ -26,7 +26,7 @@ def is_counter_clockwise(a: Point, b: Point, c: Point) -> bool:
         return False
 
 
-def polar_angle(point, start_point):
+def polar_angle(point: Point, start_point: Point):
     dx = point.x - start_point.x
     dy = point.y - start_point.y
     return math.atan2(dy, dx)
@@ -53,7 +53,7 @@ def plot_points(points: List[Point], start_point: Point = None):
         plt.scatter(start_point.x, start_point.y, color='gold')
 
 
-def plot_hull(hull, start_point):
+def plot_hull(hull: List[Point], start_point: Point):
     x_coords = [p.x for p in hull]
     y_coords = [p.y for p in hull]
     plt.plot(x_coords, y_coords, marker='o', linestyle='-', color='black')
@@ -61,15 +61,14 @@ def plot_hull(hull, start_point):
 
 
 if __name__ == '__main__':
-    points = generate_random_points(n)
-
     plt.style.use('seaborn-darkgrid')
-    plot_points(points)
 
+    points = generate_random_points(n)
     start_point = min(points, key=lambda p: p.y)
     sorted_points = sorted(points, key=lambda p: polar_angle(start_point, p))
 
     hull = convex_hull(sorted_points)
 
+    plot_points(points, start_point)
     plot_hull(hull, start_point)
     plt.show()
