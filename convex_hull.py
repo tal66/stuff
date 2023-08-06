@@ -32,8 +32,10 @@ def polar_angle(point: Point, start_point: Point):
     return math.atan2(dy, dx)
 
 
-def convex_hull(sorted_points) -> list[Point]:
+def convex_hull(points: List[Point], start_point: Point = None) -> list[Point]:
+    sorted_points = sorted(points, key=lambda p: polar_angle(start_point, p))
     result = [sorted_points[0], sorted_points[1]]
+
     for i in range(2, len(sorted_points)):
         while len(result) >= 2:
             if is_counter_clockwise(result[-2], result[-1], sorted_points[i]):
@@ -44,11 +46,12 @@ def convex_hull(sorted_points) -> list[Point]:
     return result
 
 
-def plot_points(points: List[Point], start_point: Point = None):
+def plot_points(points: List[Point], color: str = 'black', start_point: Point = None):
+    plt.style.use('seaborn-darkgrid')
     x_coords = [p.x for p in points]
     y_coords = [p.y for p in points]
 
-    plt.scatter(x_coords, y_coords, color='black')
+    plt.scatter(x_coords, y_coords, color=color)
     if start_point:
         plt.scatter(start_point.x, start_point.y, color='gold')
 
@@ -60,15 +63,15 @@ def plot_hull(hull: List[Point], start_point: Point):
     plt.plot(start_point.x, start_point.y, 'g*')
 
 
-if __name__ == '__main__':
+def plot_convex_hull(points: List[Point]):
     plt.style.use('seaborn-darkgrid')
-
-    points = generate_random_points(n)
     start_point = min(points, key=lambda p: p.y)
-    sorted_points = sorted(points, key=lambda p: polar_angle(start_point, p))
-
-    hull = convex_hull(sorted_points)
-
-    plot_points(points, start_point)
+    hull = convex_hull(points, start_point)
+    plot_points(points, start_point=start_point)
     plot_hull(hull, start_point)
+
+
+if __name__ == '__main__':
+    points = generate_random_points(n)
+    plot_convex_hull(points)
     plt.show()
