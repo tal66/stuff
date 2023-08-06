@@ -63,7 +63,7 @@ def plot_hull(hull: List[Point], start_point: Point):
     plt.plot(start_point.x, start_point.y, 'g*')
 
 
-def plot_convex_hull(points: List[Point]):
+def calculate_and_plot_convex_hull(points: List[Point]):
     plt.style.use('seaborn-darkgrid')
     start_point = min(points, key=lambda p: p.y)
     hull = convex_hull(points, start_point)
@@ -73,5 +73,5 @@ def plot_convex_hull(points: List[Point]):
 
 if __name__ == '__main__':
     points = generate_random_points(n)
-    plot_convex_hull(points)
+    calculate_and_plot_convex_hull(points)
     plt.show()
