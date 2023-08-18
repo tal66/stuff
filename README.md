@@ -12,7 +12,7 @@ Code from my page on Medium
 
 ### Fractals
 
-![fractals.jpg](pics/fractals.jpg)
+![fractals.jpg](pics/fractals.png)
 
 ### Convex Hull
 
