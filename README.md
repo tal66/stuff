@@ -1,19 +1,23 @@
-## Medium
-Code from my page on Medium
+## Stuff
+
+### pdf 
+
+- copy bookmarks from one pdf to another
+- merge (keep bookmarks)
+- get highlights
 
 ### Formula1
 
-![formula1_table.png](pics/formula1_table.png)
+<img alt="f1" src="pics/formula1_table.png" style="width: 24rem">
 
 ### Chat
 
-![chat_with_openai.gif](pics/chat_with_openai.gif)
-
+<img alt="" src="pics/chat_with_openai.gif" style="width: 24rem" >
 
 ### Fractals
 
-![fractals.jpg](pics/fractals.png)
+<img alt="" src="pics/fractals.png" style="width: 23rem" >
 
 ### Convex Hull
 
-![convex_hull.png](pics/convex_hull.png)
+<img alt="" src="pics/convex_hull.png" style="width: 22rem" >
