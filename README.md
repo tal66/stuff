@@ -6,18 +6,20 @@
 - merge (keep bookmarks)
 - get highlights
 
+<img alt="" src="pics/pdf_highlights.png" style="width: 22rem">
+
 ### Formula1
 
-<img alt="f1" src="pics/formula1_table.png" style="width: 24rem">
+<img alt="f1" src="pics/formula1_table.png" style="width: 22rem">
 
 ### Chat
 
-<img alt="" src="pics/chat_with_openai.gif" style="width: 24rem" >
+basic chat with gpt
 
 ### Fractals
 
-<img alt="" src="pics/fractals.png" style="width: 23rem" >
+<img alt="" src="pics/fractals.png" style="width: 19rem" >
 
 ### Convex Hull
 
-<img alt="" src="pics/convex_hull.png" style="width: 22rem" >
+<img alt="" src="pics/convex_hull.png" style="width: 16rem" >
